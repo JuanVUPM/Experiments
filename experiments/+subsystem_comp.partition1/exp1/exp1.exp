@@ -1,0 +1,41 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: CASES
+ COMPONENT: Subsystem_comp
+ PARTITION: partition1
+ EXPERIMENT: exp1
+ TEMPLATE: STEADY
+ CREATION DATE: 31/05/2018
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp1 ON Subsystem_comp.partition1
+   DECLS
+   OBJECTS
+   INIT
+      -- initial values for algebraics
+      New_Junction_1.M_in2 = 0.1
+      New_Junction_1.M_out = 0.45
+
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+      Inlet_1.Tt = 300
+      Inlet_1.pt = 1000000
+      New_Junction_1.f_out.W = 100
+      Turbine_1.m.Power = 5000000
+      Valve_1.M_g = 0.5
+
+   BODY
+      -- report results in file reportAll.rpt
+      REPORT_LIST("reportAll","*",TRUE)
+		Turbine_1.pi = 1.3
+		New_Junction_1.M_A1 = 0.45
+      DEBUG_LEVEL= 1      -- Range 0..4
+      -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
+      --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
+      --eSetErrorAction(ERR_NAN_INF, SEV_KILLPOINT) -- Detect NaN or Inf values, default is SEV_NONE, recommended is SEV_KILLPOINT
+      TOLTYPE= RELTOL -- convergence criteria
+      TOLERANCE = 1e-06 -- steady solver relative tolerance 
+
+      -- Call the steady state function
+      STEADY()
+
+END EXPERIMENT

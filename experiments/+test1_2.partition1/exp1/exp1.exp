@@ -1,0 +1,41 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: CASES
+ COMPONENT: Test1_2
+ PARTITION: partition1
+ EXPERIMENT: exp1
+ TEMPLATE: STEADY
+ CREATION DATE: 22/02/2018
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp1 ON Test1_2.partition1
+   DECLS
+   OBJECTS
+   INIT
+      -- initial values for algebraics
+      Tank.M_g = 0.1
+
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+      Tank.l.W = 20
+      Tank.l.pt = 57e5
+
+   BODY
+      -- report results in file reportAll.rpt
+      REPORT_LIST("reportAll","*",TRUE)
+
+      DEBUG_LEVEL= 1      -- Range 0..4
+      -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
+      --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
+      --eSetErrorAction(ERR_NAN_INF, SEV_KILLPOINT) -- Detect NaN or Inf values, default is SEV_NONE, recommended is SEV_KILLPOINT
+      TOLTYPE= RELTOL -- convergence criteria
+      TOLERANCE = 1e-06 -- steady solver relative tolerance 
+
+      FOR (Tank.A_g_d=0.0001; Tank.A_g_d<0.0005; Tank.A_g_d=Tank.A_g_d+0.0001)
+		NEW_BRANCH("A_g=$Tank.A_g_d m^2")
+		FOR (Tank.l.W=20; Tank.l.W<120; Tank.l.W=Tank.l.W+1)
+      -- Call the steady state function
+      STEADY()
+		END FOR 
+		END FOR 
+
+END EXPERIMENT

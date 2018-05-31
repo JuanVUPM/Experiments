@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="CASES" component="deposit_calor" partition="partition1">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<boundaries>
+  <variable name="Deposit_1.g.W"/>
+</boundaries>
+<dynamics>
+  <variable name="Deposit_1.m"/>
+  <variable name="Deposit_1.flujo"/>
+</dynamics>
+<algebraics>
+  <variable name="Deposit_1.expPoly"/>
+</algebraics>
+</partitionInfo>

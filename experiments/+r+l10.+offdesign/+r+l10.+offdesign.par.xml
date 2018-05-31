@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="CASES" component="RL10" partition="Offdesign">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<boundaries>
+  <variable name="LPRES.Altitude"/>
+  <variable name="New_Junction_1.A_out"/>
+</boundaries>
+<algebraics>
+  <variable name="CC.M_r"/>
+  <variable name="CC.W_F"/>
+  <variable name="CC.phi"/>
+  <variable name="New_Junction_1.M_in2"/>
+  <variable name="New_Junction_1.M_out"/>
+  <variable name="New_Junction_1.f_in1.Tt"/>
+  <variable name="New_Junction_1.f_in2.W"/>
+  <variable name="ThrustMonitor.g.Tt"/>
+  <variable name="Turbine.M_2"/>
+  <variable name="Turbine.U"/>
+  <variable name="CC.p_out_ch"/>
+  <variable name="ThrustMonitor.M_out"/>
+</algebraics>
+</partitionInfo>

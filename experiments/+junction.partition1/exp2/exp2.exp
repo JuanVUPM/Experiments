@@ -1,0 +1,34 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: CASES
+ COMPONENT: Junction
+ PARTITION: partition1
+ EXPERIMENT: exp2
+ TEMPLATE: STEADY
+ CREATION DATE: 28/05/2018
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp2 ON Junction.partition1
+   DECLS
+   OBJECTS
+   INIT
+      -- initial values for algebraics
+      New_Junction_1.M_in2 = 0.2
+      New_Junction_1.M_out = 0.2
+
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+   BODY
+      -- report results in file reportAll.rpt
+      REPORT_LIST("reportAll","*",TRUE)
+
+      DEBUG_LEVEL= 1      -- Range 0..4
+      -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
+      --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
+      --eSetErrorAction(ERR_NAN_INF, SEV_KILLPOINT) -- Detect NaN or Inf values, default is SEV_NONE, recommended is SEV_KILLPOINT
+      TOLTYPE= RELTOL -- convergence criteria
+      TOLERANCE = 1e-06 -- steady solver relative tolerance 
+
+      -- Call the steady state function
+      STEADY()
+
+END EXPERIMENT

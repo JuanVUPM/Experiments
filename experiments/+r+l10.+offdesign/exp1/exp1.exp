@@ -1,0 +1,42 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: CASES
+ COMPONENT: RL10
+ PARTITION: Offdesign
+ EXPERIMENT: exp1
+ TEMPLATE: STEADY
+ CREATION DATE: 29/05/2018
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp1 ON RL10.Offdesign
+   DECLS
+   OBJECTS
+   INIT
+      -- initial values for algebraics
+      New_Junction_1.M_in2 = 0.27
+      New_Junction_1.M_out = 0.45
+      New_Junction_1.f_in1.Tt = 147
+      New_Junction_1.f_in2.W = 0.62
+      CC.p_out_ch = 4252.086
+      ThrustMonitor.M_out = 4.53
+
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+      LPRES.Altitude = 0
+      New_Junction_1.A_out = 0.00129878961
+
+
+   BODY
+      -- report results in file reportAll.rpt
+      REPORT_LIST("reportAll","*",TRUE)
+
+      DEBUG_LEVEL= 3      -- Range 0..4
+      -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
+      --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
+      --eSetErrorAction(ERR_NAN_INF, SEV_KILLPOINT) -- Detect NaN or Inf values, default is SEV_NONE, recommended is SEV_KILLPOINT
+      TOLTYPE= RELTOL -- convergence criteria
+      TOLERANCE = 1e-06 -- steady solver relative tolerance 
+
+      -- Call the steady state function
+      STEADY()
+
+END EXPERIMENT

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<library version="1.1.1">
+ <filedeps>
+  <file name="version.el"/>
+  <file name="Test1.eds"/>
+  <file name="Test1_1.eds"/>
+  <file name="Test1_2.eds"/>
+  <file name="Valve_test.eds"/>
+  <file name="Valve_case2.eds"/>
+  <file name="Junction.eds"/>
+  <file name="Junction_easy.eds"/>
+  <file name="Deposit_test.eds"/>
+  <file name="Monopropulsante.eds"/>
+  <file name="Monopropulsante_design.eds"/>
+  <file name="Tank_Test.eds"/>
+  <file name="Deposit_isolated.eds"/>
+  <file name="Tank_transient.eds"/>
+  <file name="Tank_transient2.eds"/>
+  <file name="Blowdown.eds"/>
+  <file name="RL10.eds"/>
+  <file name="MonopropellantOffDesign.eds"/>
+  <file name="Monopropellant_design.eds"/>
+  <file name="Deposit_test_ad.eds"/>
+  <file name="Subsystem.eds"/>
+  <file name="Subsystem_comp.eds"/>
+ </filedeps>
+ <libdeps>
+ </libdeps>
+ <otherdeps>
+ </otherdeps>
+</library>
