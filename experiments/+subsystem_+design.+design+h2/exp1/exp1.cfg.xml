@@ -11,10 +11,10 @@
 					<var name="#Point"/>
 					<var name="New_Junction_1.A_in1"/>
 					<var name="New_Junction_1.A_in2"/>
+					<var name="New_Junction_1.A_out"/>
 					<var name="Turbine_1.A_in_d"/>
 					<var name="Turbine_1.r_m_d"/>
 					<var name="Valve_1.A"/>
-					<var name="Turbine_1.U"/>
 				</table>
 			</tableWindow>
 		</tab>

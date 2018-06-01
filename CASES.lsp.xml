@@ -23,6 +23,11 @@
   <file name="Deposit_test_ad.eds"/>
   <file name="Subsystem.eds"/>
   <file name="Subsystem_comp.eds"/>
+  <file name="Subsystem_Design.eds"/>
+  <file name="Subsystem_actual.eds"/>
+  <file name="Subsystem_new_com.eds"/>
+  <file name="Subsystem_old.eds"/>
+  <file name="Subsystem_new_i.eds"/>
  </filedeps>
  <libdeps>
  </libdeps>

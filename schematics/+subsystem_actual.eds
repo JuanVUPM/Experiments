@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE eds SYSTEM "DTDFILE_FULLPATH">
+<schematic version="1.2.0" paper="A4" orientation="Landscape" sorting="customized" aliasingInShapes="true" aliasingInUnitSymbols="true" connector-status="allshowed" connector-creation="true" >
+
+	<grid enabled="true" snap="true" hspacing="8" vspacing="8" colorMain="230,230,230" colorSecondary="243,243,243" numberCells="4" margin="true" />
+
+	<layers>
+			<layer id="1" name="Layer_1" isVisible="true" isActive="true" elPosition="1" />
+	</layers>
+	
+	<text id="Text_1" cx="92.5" cy="28" sx="185" sy="56" lineType="0"  color="255,255,220" dx="905" dy="706" layer="1"  >
+		<![CDATA[&#60;!DOCTYPE HTML PUBLIC &#34;-//W3C//DTD HTML 4.0//EN&#34; &#34;http://www.w3.org/TR/REC-html40/strict.dtd&#34;&#62;&#60;html&#62;&#60;head&#62;&#60;meta name=&#34;qrichtext&#34; content=&#34;1&#34; /&#62;&#60;style type=&#34;text/css&#34;&#62;p, li { white-space: pre-wrap; }&#60;/style&#62;&#60;/head&#62;&#60;body style=&#34; font-family:&#39;Arial&#39;; font-size:10pt; font-weight:400; font-style:normal;&#34;&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62; LIBRARY: CASES&#60;/p&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62; FILE: Subsystem_actual&#60;/p&#62;&#60;p style=&#34; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&#34;&#62; CREATION DATE: 01/06/2018&#60;/p&#62;&#60;/body&#62;&#60;/html&#62;]]>
+	</text>
+
+	<component id="Inlet_1" library="LPRES" type="Inlet" layer="1" elPosition="0"  hotPort="f" >
+	
+		<symbol cx="208.029" cy="74" sx="64.9412" sy="85" dx="-42.0294" dy="313.971" rotation="270" onLabel="true" />
+	
+		<label cx="23" cy="12" dx="141" dy="427.971" />
+	
+		<instanceData>
+			<datum id="fluid" value="H2" pos="D" />
+		</instanceData>
+	
+	</component>
+
+	<component id="SplitFrac_1" library="LPRES" type="SplitFrac" layer="1" elPosition="1"  hotPort="f_out" >
+	
+		<symbol cx="244" cy="112" sx="81" sy="49" dx="86" dy="302" onLabel="true" />
+	
+		<label cx="37" cy="12" dx="286.5" dy="436" />
+	
+	</component>
+
+	<component id="Valve_1" library="LPRES" type="Valve" layer="1" elPosition="2"  hotPort="f_out" >
+	
+		<symbol cx="208" cy="144.026" sx="89" sy="16.9472" dx="334" dy="294" onLabel="true" />
+	
+		<label cx="26" cy="12" dx="513" dy="444" />
+	
+	</component>
+
+	<component id="Turbine_1" library="LPRES" type="Turbine" layer="1" elPosition="3"  hotPort="f_out" >
+	
+		<symbol cx="280" cy="249.974" sx="129" sy="92.9472" dx="234" dy="78" onLabel="true" />
+	
+		<label cx="32" cy="12" dx="478" dy="371.947" />
+	
+		<instanceData>
+			<datum id="pi" value="1.18" pos="D" />
+			<datum id="W" value="50" pos="D" />
+		</instanceData>
+	
+	</component>
+
+	<connector id="Connector_1" sShape="Inlet_1" sPort="f" eShape="SplitFrac_1" ePort="f_in" points="194,380 284,380"  intermediate1="1" elPosition="0" dx="10" dy="10"  />
+
+	<connector id="Connector_2" sShape="SplitFrac_1" sPort="f_b" eShape="Valve_1" ePort="f_in" points="320,428"  intermediate1="1" elPosition="1" dx="10" dy="10"  />
+
+	<connector id="Connector_3" sShape="SplitFrac_1" sPort="f_out" eShape="Turbine_1" ePort="f_in" points="356,276"  intermediate2="1" elPosition="2" dx="10" dy="10"  />
+
+	<component id="Junction_1" library="LPRES" type="Junction" layer="1" elPosition="4" >
+	
+		<symbol cx="244" cy="128" sx="81" sy="49" dx="540" dy="228" rotation="270" onLabel="true" />
+	
+		<label cx="35" cy="12" dx="744" dy="378" />
+	
+	</component>
+
+	<connector id="Connector_4" sShape="Valve_1" sPort="f_out" eShape="Junction_1" ePort="f_in1" points="582,432 768,432" elPosition="3"  />
+
+	<connector id="Connector_5" sShape="Turbine_1" sPort="f_out" eShape="Junction_1" ePort="f_in2" points="768,286"  intermediate2="1" elPosition="4"  />
+
+	<bodyEL>
+	<![CDATA[-- EL code of the schematic.
+-- The COMPONENT definition lines are blocked for edition.
+-- You can edit the parameters clicking over them.
+
+COMPONENT %NAME% 
+
+
+END COMPONENT
+]]>
+	</bodyEL>
+
+	<usedLibrary name="LPRES" version="1.3.5" auto="true" />
+</schematic>

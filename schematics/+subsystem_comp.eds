@@ -14,9 +14,9 @@
 
 	<component id="Inlet_1" library="LPRES" type="Inlet" layer="1" elPosition="0"  hotPort="f" >
 	
-		<symbol cx="208.029" cy="74" sx="64.9412" sy="85" dx="-60.0294" dy="303.971" rotation="270" onLabel="true" />
+		<symbol cx="208.029" cy="74" sx="64.9412" sy="85" dx="-62.0294" dy="293.971" rotation="270" onLabel="true" />
 	
-		<label cx="23" cy="12" dx="123" dy="417.971" />
+		<label cx="23" cy="12" dx="121" dy="407.971" />
 	
 		<instanceData>
 			<datum id="fluid" value="He" pos="D" />
@@ -66,15 +66,15 @@
 	
 	</component>
 
-	<connector id="Connector_1" sShape="Inlet_1" sPort="f" eShape="SplitFrac_1" ePort="f_in" points="176,360 264,360"  intermediate1="1" elPosition="0" dx="10" dy="10"  />
+	<connector id="Connector_1" sShape="Inlet_1" sPort="f" eShape="SplitFrac_1" ePort="f_in" points="184,370 274,370"  intermediate1="1" elPosition="0"  />
 
-	<connector id="Connector_2" sShape="SplitFrac_1" sPort="f_b" eShape="Valve_1" ePort="f_in" points="300,408"  intermediate1="1" elPosition="1" dx="10" dy="10"  />
+	<connector id="Connector_2" sShape="SplitFrac_1" sPort="f_b" eShape="Valve_1" ePort="f_in" points="310,418"  intermediate1="1" elPosition="1"  />
 
-	<connector id="Connector_3" sShape="SplitFrac_1" sPort="f_out" eShape="Turbine_1" ePort="f_in" points="336,256"  intermediate2="1" elPosition="2" dx="10" dy="10"  />
+	<connector id="Connector_3" sShape="SplitFrac_1" sPort="f_out" eShape="Turbine_1" ePort="f_in" points="346,266"  intermediate2="1" elPosition="2"  />
 
-	<connector id="Connector_4" sShape="Valve_1" sPort="f_out" eShape="New_Junction_1" ePort="f_in1" elPosition="3" dx="10" dy="10"  />
+	<connector id="Connector_4" sShape="Valve_1" sPort="f_out" eShape="New_Junction_1" ePort="f_in1" elPosition="3"  />
 
-	<connector id="Connector_5" sShape="Turbine_1" sPort="f_out" eShape="New_Junction_1" ePort="f_in2" points="544,304"  intermediate1="1" elPosition="4" dx="10" dy="10"  />
+	<connector id="Connector_5" sShape="Turbine_1" sPort="f_out" eShape="New_Junction_1" ePort="f_in2" points="554,314"  intermediate1="1" elPosition="4"  />
 
 	<bodyEL>
 	<![CDATA[-- EL code of the schematic.
@@ -82,8 +82,6 @@
 -- You can edit the parameters clicking over them.
 
 COMPONENT %NAME% 
-
-
 END COMPONENT
 ]]>
 	</bodyEL>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="CASES" component="Subsystem_new_com" partition="OffDesignG">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<noDatas>
+  <variable name="New_Junction_1.M_A1"/>
+</noDatas>
+<boundaries>
+  <variable name="Inlet_1.Tt"/>
+  <variable name="Inlet_1.pt"/>
+  <variable name="New_Junction_1.A_in1"/>
+  <variable name="New_Junction_1.A_in2"/>
+  <variable name="New_Junction_1.f_in1.W"/>
+  <variable name="New_Junction_1.f_out.W"/>
+  <variable name="Valve_1.A"/>
+</boundaries>
+<algebraics>
+  <variable name="Valve_1.M_g"/>
+  <variable name="New_Junction_1.M_A1"/>
+  <variable name="New_Junction_1.M_in2"/>
+  <variable name="Turbine_1.M_2"/>
+  <variable name="Turbine_1.U"/>
+  <variable name="New_Junction_1.M_out"/>
+</algebraics>
+</partitionInfo>

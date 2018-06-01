@@ -1,36 +1,38 @@
  /*-----------------------------------------------------------------------------------------
  LIBRARY: CASES
- COMPONENT: Subsystem
- PARTITION: partition1
+ COMPONENT: Subsystem_new_com
+ PARTITION: OffDesignG
  EXPERIMENT: exp1
  TEMPLATE: STEADY
- CREATION DATE: 31/05/2018
+ CREATION DATE: 01/06/2018
 -----------------------------------------------------------------------------------------*/
 
-EXPERIMENT exp1 ON Subsystem.partition1
+EXPERIMENT exp1 ON Subsystem_new_com.OffDesignG
    DECLS
    OBJECTS
    INIT
       -- initial values for algebraics
-      Valve_1.M_g = 0.5
-      New_Junction_1.M_in2 = 0.4
-      New_Junction_1.M_out = 0.4
+      Valve_1.M_g = 0
+      New_Junction_1.M_A1 = 0.3
+      New_Junction_1.M_in2 = 0.3
+      New_Junction_1.M_out = 0.3
 
    BOUNDS
       -- Set equations for boundaries: boundVar = f(TIME;...)
-      Inlet_1.Tt = 300
+		Inlet_1.Tt = 300
       Inlet_1.pt = 1000000
-      New_Junction_1.A_in1 = 0.125532109
-      New_Junction_1.A_in2 = 0.105168008
-      New_Junction_1.f_out.W = 100
-      Valve_1.A = 0.1
+      New_Junction_1.A_in1 = 0.0743511242
+      New_Junction_1.A_in2 = 0.0135002168
+		New_Junction_1.f_in1.W = 16
+      New_Junction_1.f_out.W = 20
+      Valve_1.A = 0.0414244673
 
 
    BODY
       -- report results in file reportAll.rpt
       REPORT_LIST("reportAll","*",TRUE)
-		New_Junction_1.M_A1 = 0.45
-		Turbine_1.U_0 = 50
+		
+		Turbine_1.U = 400
       DEBUG_LEVEL= 1      -- Range 0..4
       -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
       --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
@@ -38,9 +40,10 @@ EXPERIMENT exp1 ON Subsystem.partition1
       TOLTYPE= RELTOL -- convergence criteria
       TOLERANCE = 1e-06 -- steady solver relative tolerance 
 
-      FOR(Valve_1.A = 0.041; Valve_1.A <= 0.1; Valve_1.A = Valve_1.A + 0.001)
+    	FOR(Valve_1.A = 0.032; Valve_1.A <= 0.042; Valve_1.A = Valve_1.A + 0.001)
       -- Call the steady state function
       STEADY()
 		END FOR
+
 
 END EXPERIMENT
