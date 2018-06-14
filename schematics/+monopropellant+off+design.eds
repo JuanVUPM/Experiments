@@ -20,7 +20,8 @@
 	
 		<instanceData>
 			<datum id="fluid_l" value="N2H4" pos="D" />
-			<datum id="Ag" value="0.00228120593" pos="D" />
+			<datum id="T_d" value="298.15" pos="D" />
+			<datum id="Ag" value="0.000688326825" pos="D" />
 		</instanceData>
 	
 	</component>
@@ -33,7 +34,7 @@
 	
 		<instanceData>
 			<datum id="Type" value="Off_design" pos="P" />
-			<datum id="A" value="0.000813385636" pos="D" />
+			<datum id="A" value="0.000814608876" pos="D" />
 			<datum id="W" value="10" pos="D" />
 		</instanceData>
 	
@@ -46,7 +47,6 @@
 		<label cx="23" cy="12" dx="63.029" dy="138" />
 	
 		<instanceData>
-			<datum id="pt" value="7000000" pos="D" />
 			<datum id="fluid" value="He" pos="D" />
 			<datum id="Type" value="Unknown_W" pos="P" />
 		</instanceData>
@@ -102,15 +102,16 @@
 
 	<connector id="Connector_5" sShape="Regulator_1" sPort="f_out" eShape="Tank_1" ePort="g"  />
 
-	<component id="MCombCha_1" library="LPRES" type="MCombCha" layer="1"  hotPort="i" >
+	<component id="MCombCha_1" library="LPRES" type="MCombCha" layer="1"  hotPort="h" >
 	
-		<symbol cx="218" cy="186" sx="117" sy="189" dx="312" dy="368" onLabel="true" />
+		<symbol cx="218" cy="186" sx="117" sy="189" dx="324" dy="328" onLabel="true" />
 	
-		<label cx="45" cy="12" dx="477" dy="646" />
+		<label cx="45" cy="12" dx="489" dy="606" />
 	
 		<instanceData>
 			<datum id="Reaction" value="Hidrazine" pos="P" />
-			<datum id="W_0" value="5" pos="D" />
+			<datum id="T_c0" value="1000" pos="D" />
+			<datum id="W_0" value="10" pos="D" />
 			<datum id="Type" value="Off_design" pos="P" />
 			<datum id="p_c" value="5700000" pos="D" />
 			<datum id="A_th" value="0.00219727842" pos="D" />
@@ -118,11 +119,11 @@
 	
 	</component>
 
-	<connector id="Connector_3" sShape="Injector_1" sPort="f_out" eShape="MCombCha_1" ePort="f" points="664,464"  intermediate1="1"  />
+	<connector id="Connector_3" sShape="Injector_1" sPort="f_out" eShape="MCombCha_1" ePort="f" points="544,428"  intermediate2="1"  />
 
-	<connector id="Connector_4" sShape="MCombCha_1" sPort="g" eShape="ThrustMonitor_1" ePort="g" points="532,660"  intermediate1="1"  />
+	<connector id="Connector_4" sShape="MCombCha_1" sPort="g" eShape="ThrustMonitor_1" ePort="g" points="544,660"  intermediate1="1"  />
 
-	<connector id="Connector_8" sShape="MCombCha_1" sPort="i" eShape="ControlPanel_1" ePort="i_Comb" points="764,520"  intermediate2="1"  />
+	<connector id="Connector_8" sShape="MCombCha_1" sPort="i" eShape="ControlPanel_1" ePort="i_Comb" points="596,556"  intermediate1="1"  />
 
 	<bodyEL>
 	<![CDATA[-- EL code of the schematic.

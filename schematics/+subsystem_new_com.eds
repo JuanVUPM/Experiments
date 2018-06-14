@@ -20,6 +20,7 @@
 	
 		<instanceData>
 			<datum id="fluid" value="H2" pos="D" />
+			<datum id="W" value="20" pos="D" />
 		</instanceData>
 	
 	</component>
@@ -34,9 +35,9 @@
 
 	<component id="Valve_1" library="LPRES" type="Valve" layer="1" elPosition="2"  hotPort="f_out" >
 	
-		<symbol cx="208" cy="144.026" sx="89" sy="16.9472" dx="334" dy="294" onLabel="true" />
+		<symbol cx="208" cy="144.026" sx="89" sy="16.9472" dx="336" dy="296" onLabel="true" />
 	
-		<label cx="26" cy="12" dx="513" dy="444" />
+		<label cx="26" cy="12" dx="515" dy="446" />
 	
 	</component>
 
@@ -48,7 +49,7 @@
 	
 		<instanceData>
 			<datum id="Type" value="Off_design" pos="P" />
-			<datum id="A_in" value="0.179209399" pos="D" />
+			<datum id="A_in" value="0.189150226" pos="D" />
 			<datum id="r_m" value="0.152341101" pos="D" />
 			<datum id="W" value="50" pos="D" />
 		</instanceData>
@@ -68,22 +69,22 @@
 	
 	</component>
 
-	<connector id="Connector_1" sShape="Inlet_1" sPort="f" eShape="SplitFrac_1" ePort="f_in" points="194,380 284,380"  intermediate1="1" elPosition="0" dx="10" dy="10"  />
+	<connector id="Connector_1" sShape="Inlet_1" sPort="f" eShape="SplitFrac_1" ePort="f_in" points="204,390 294,390"  intermediate1="1" elPosition="0"  />
 
-	<connector id="Connector_2" sShape="SplitFrac_1" sPort="f_b" eShape="Valve_1" ePort="f_in" points="320,428"  intermediate1="1" elPosition="1" dx="10" dy="10"  />
+	<connector id="Connector_2" sShape="SplitFrac_1" sPort="f_b" eShape="Valve_1" ePort="f_in" points="504,434"  intermediate2="1" elPosition="1"  />
 
-	<connector id="Connector_3" sShape="SplitFrac_1" sPort="f_out" eShape="Turbine_1" ePort="f_in" points="356,276"  intermediate2="1" elPosition="2" dx="10" dy="10"  />
+	<connector id="Connector_3" sShape="SplitFrac_1" sPort="f_out" eShape="Turbine_1" ePort="f_in" points="366,286"  intermediate2="1" elPosition="2"  />
 
-	<connector id="Connector_4" sShape="Valve_1" sPort="f_out" eShape="New_Junction_1" ePort="f_in1" elPosition="3" dx="10" dy="10"  />
+	<connector id="Connector_4" sShape="Valve_1" sPort="f_out" eShape="New_Junction_1" ePort="f_in1" points="584,438"  intermediate1="1" elPosition="3"  />
 
-	<connector id="Connector_5" sShape="Turbine_1" sPort="f_out" eShape="New_Junction_1" ePort="f_in2" points="564,324"  intermediate1="1" elPosition="4" dx="10" dy="10"  />
+	<connector id="Connector_5" sShape="Turbine_1" sPort="f_out" eShape="New_Junction_1" ePort="f_in2" points="574,334"  intermediate1="1" elPosition="4"  />
 
 	<bodyEL>
-	<![CDATA[-- EL code of the schematic.
+	<![CDATA[
+-- EL code of the schematic.
 -- The COMPONENT definition lines are blocked for edition.
 -- You can edit the parameters clicking over them.
 COMPONENT %NAME% 
-
 DECLS 
 	REAL Delta_p									UNITS u_Pa
 	
@@ -96,6 +97,6 @@ END COMPONENT
 ]]>
 	</bodyEL>
 
-	<usedLibrary name="MATH" version="3.1.2" auto="false" />
+	<usedLibrary name="MATH" version="3.1" auto="false" />
 	<usedLibrary name="LPRES" version="1.3.5" auto="true" />
 </schematic>

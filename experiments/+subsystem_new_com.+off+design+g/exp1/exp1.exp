@@ -13,9 +13,9 @@ EXPERIMENT exp1 ON Subsystem_new_com.OffDesignG
    INIT
       -- initial values for algebraics
       Valve_1.M_g = 0
-      New_Junction_1.M_A1 = 0.3
-      New_Junction_1.M_in2 = 0.3
-      New_Junction_1.M_out = 0.3
+      New_Junction_1.M_A1 = 0.4
+      New_Junction_1.M_in2 = 0.4
+      New_Junction_1.M_out = 0.4
 
    BOUNDS
       -- Set equations for boundaries: boundVar = f(TIME;...)
@@ -25,14 +25,14 @@ EXPERIMENT exp1 ON Subsystem_new_com.OffDesignG
       New_Junction_1.A_in2 = 0.0135002168
 		New_Junction_1.f_in1.W = 16
       New_Junction_1.f_out.W = 20
-      Valve_1.A = 0.0414244673
-
+      --Valve_1.A = 0.0414244673
+		Valve_1.A = 0.0317
 
    BODY
       -- report results in file reportAll.rpt
       REPORT_LIST("reportAll","*",TRUE)
 		
-		Turbine_1.U = 400
+		Turbine_1.U_0 = 100
       DEBUG_LEVEL= 1      -- Range 0..4
       -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
       --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
@@ -40,9 +40,9 @@ EXPERIMENT exp1 ON Subsystem_new_com.OffDesignG
       TOLTYPE= RELTOL -- convergence criteria
       TOLERANCE = 1e-06 -- steady solver relative tolerance 
 
-    	FOR(Valve_1.A = 0.032; Valve_1.A <= 0.042; Valve_1.A = Valve_1.A + 0.001)
-      -- Call the steady state function
-      STEADY()
+    	FOR(Valve_1.A = 0.032; Valve_1.A <= 0.046; Valve_1.A = Valve_1.A + 0.0005)
+      	-- Call the steady state function
+      	STEADY()
 		END FOR
 
 

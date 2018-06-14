@@ -1,0 +1,40 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: CASES
+ COMPONENT: Junction_off_inc
+ PARTITION: partition1
+ EXPERIMENT: exp1
+ TEMPLATE: STEADY
+ CREATION DATE: 08/06/2018
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp1 ON Junction_off_inc.partition1
+   DECLS
+   OBJECTS
+   INIT
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+      Inlet_1.Tt = 300
+      Inlet_1.pt = 1000000
+      Inlet_2.Tt = 250
+
+   BODY
+      -- report results in file reportAll.rpt
+      REPORT_LIST("reportAll","*",TRUE)
+		-- New_Junction_1.A_ratio1 = 0.
+
+      DEBUG_LEVEL= 1      -- Range 0..4
+      -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
+      -- eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
+      -- eSetErrorAction(ERR_NAN_INF, SEV_KILLPOINT) -- Detect NaN or Inf values, default is SEV_NONE, recommended is SEV_KILLPOINT
+      TOLTYPE= RELTOL -- convergence criteria
+      TOLERANCE = 1e-06 -- steady solver relative tolerance 
+		--FOR(New_Junction_1.PR = 0.8; New_Junction_1.PR <= 1.3; New_Junction_1.PR = New_Junction_1.PR + 0.1)
+		FOR(New_Junction_1.A_ratio1 = 0.2; New_Junction_1.A_ratio1 <= 0.8; New_Junction_1.A_ratio1 = New_Junction_1.A_ratio1 + 0.1)
+		NEW_BRANCH ("Area ratio = $New_Junction_1.A_ratio1" )
+		FOR(Inlet_1.pt = 900000; Inlet_1.pt <= 1100000; Inlet_1.pt = Inlet_1.pt + 5000)
+      -- Call the steady state function
+      STEADY()
+		END FOR
+		END FOR 
+
+END EXPERIMENT

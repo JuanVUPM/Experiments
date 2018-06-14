@@ -10,20 +10,21 @@
 EXPERIMENT exp1 ON Junction_easy.OffDesign
    DECLS
    OBJECTS
+	
    INIT
       -- initial values for algebraics
-      New_Junction_1.M_A1 = 0.3
-      New_Junction_1.M_in2 = 0.3
-      New_Junction_1.M_out = 0.3
+      New_Junction_1.M_A1 = 0.5
+      New_Junction_1.M_in2 = 0.5
+      New_Junction_1.M_out = 0.5
 
    BOUNDS
       -- Set equations for boundaries: boundVar = f(TIME;...)
       Inlet_1.Tt = 250
-      Inlet_1.pt = 100000
+      Inlet_1.pt = 1000000
       Inlet_2.Tt = 300
-      Inlet_2.pt = 110000
-      New_Junction_1.A_in1 = 0.2
-      New_Junction_1.A_in2 = 0.15
+      Inlet_2.pt = 909090
+      New_Junction_1.A_in1 = 0.015
+      New_Junction_1.A_in2 = 0.015
 
 
    BODY
@@ -37,7 +38,13 @@ EXPERIMENT exp1 ON Junction_easy.OffDesign
       TOLTYPE= RELTOL -- convergence criteria
       TOLERANCE = 1e-06 -- steady solver relative tolerance 
 
+		FOR (New_Junction_1.A_in1=0.01; New_Junction_1.A_in1<=0.04; New_Junction_1.A_in1=New_Junction_1.A_in1+0.001)
+		
+		--New_Junction_1.M_A1 = 0.1
+      --New_Junction_1.M_in2 = 0.1
+      --New_Junction_1.M_out = 0.1
+
       -- Call the steady state function
       STEADY()
-
+		END FOR
 END EXPERIMENT

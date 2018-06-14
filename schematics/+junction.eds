@@ -19,9 +19,8 @@
 		<label cx="23" cy="12" dx="671.029" dy="282" />
 	
 		<instanceData>
-			<datum id="pt" value="1000000" pos="D" />
 			<datum id="fluid" value="He" pos="D" />
-			<datum id="W" value="0.621376357" pos="D" />
+			<datum id="W" value="10" pos="D" />
 		</instanceData>
 	
 	</component>
@@ -33,9 +32,8 @@
 		<label cx="23" cy="12" dx="247.029" dy="282" />
 	
 		<instanceData>
-			<datum id="pt" value="101000" pos="D" />
 			<datum id="fluid" value="He" pos="D" />
-			<datum id="W" value="2.07931433" pos="D" />
+			<datum id="W" value="10" pos="D" />
 		</instanceData>
 	
 	</component>
@@ -47,7 +45,8 @@
 		<label cx="51" cy="12" dx="433.5" dy="386" />
 	
 		<instanceData>
-			<datum id="A_ratio1" value="0.974603114" pos="D" />
+			<datum id="A_ratio1" value="0.489" pos="D" />
+			<datum id="PR" value="1.111" pos="D" />
 		</instanceData>
 	
 	</component>

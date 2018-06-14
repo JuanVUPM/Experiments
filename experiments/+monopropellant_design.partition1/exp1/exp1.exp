@@ -4,7 +4,7 @@
  PARTITION: partition1
  EXPERIMENT: exp1
  TEMPLATE: STEADY
- CREATION DATE: 29/05/2018
+ CREATION DATE: 05/06/2018
 -----------------------------------------------------------------------------------------*/
 
 EXPERIMENT exp1 ON Monopropellant_design.partition1
@@ -12,13 +12,15 @@ EXPERIMENT exp1 ON Monopropellant_design.partition1
    OBJECTS
    INIT
       -- initial values for algebraics
+      ThrustMonitor_1.M_out = 100
       MCombCha_1.p_out_ch = 100
       Tank_1.M_g = 0.1
-      ThrustMonitor_1.M_out = 100
 
    BOUNDS
       -- Set equations for boundaries: boundVar = f(TIME;...)
-      Injector_1.f_in.pt = 5999900
+      FlowMeter_1.f_in.pt = 5999000
+      Inlet_1.Tt = 300
+      Inlet_1.pt = 7000000
       LPRES.Altitude = 0
 
    BODY

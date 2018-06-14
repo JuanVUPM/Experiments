@@ -26,8 +26,19 @@
   <file name="Subsystem_Design.eds"/>
   <file name="Subsystem_actual.eds"/>
   <file name="Subsystem_new_com.eds"/>
-  <file name="Subsystem_old.eds"/>
   <file name="Subsystem_new_i.eds"/>
+  <file name="Valve_Validation.eds"/>
+  <file name="MonopropellantOffDesignCool.eds"/>
+  <file name="Junction_off_inc.eds"/>
+  <file name="Tank_F_SR.eds"/>
+  <file name="Tank_I_SR.eds"/>
+  <file name="Tank_F_CR.eds"/>
+  <file name="Tank_I_CR.eds"/>
+  <file name="Subsystem_incom.eds"/>
+  <file name="Subsystem_knownG.eds"/>
+  <file name="Subsystem_Mach.eds"/>
+  <file name="Tank_step.eds"/>
+  <file name="Adiabatico.eds"/>
  </filedeps>
  <libdeps>
  </libdeps>

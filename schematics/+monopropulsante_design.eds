@@ -37,9 +37,9 @@
 
 	<component id="MCombCha_1" library="LPRES" type="MCombCha" layer="1" elPosition="3" >
 	
-		<symbol cx="218" cy="186" sx="117" sy="189" dx="436.25" dy="272" onLabel="true" />
+		<symbol cx="218" cy="186" sx="117" sy="189" dx="348" dy="344" onLabel="true" />
 	
-		<label cx="45" cy="12" dx="601.25" dy="550" />
+		<label cx="45" cy="12" dx="513" dy="622" />
 	
 		<instanceData>
 			<datum id="Reaction" value="Hidrazine" pos="P" />
@@ -48,7 +48,17 @@
 	
 	</component>
 
-	<connector id="Connector_2" sShape="Injector_1" sPort="f_out" eShape="MCombCha_1" ePort="f" points="648,356"  intermediate2="1" elPosition="1"  />
+	<connector id="Connector_2" sShape="Injector_1" sPort="f_out" eShape="MCombCha_1" ePort="f" points="568,356"  intermediate2="1" elPosition="1"  />
+
+	<component id="CoolingJacket_1" library="LPRES" type="CoolingJacket" layer="1" elPosition="4"  hotPort="h" >
+	
+		<symbol cx="274" cy="138" sx="45" sy="117" dx="148" dy="412" onLabel="true" />
+	
+		<label cx="51.5" cy="12" dx="362" dy="606" />
+	
+	</component>
+
+	<connector id="Connector_3" sShape="MCombCha_1" sPort="h" eShape="CoolingJacket_1" ePort="h" elPosition="2"  />
 
 	<bodyEL>
 	<![CDATA[-- EL code of the schematic.

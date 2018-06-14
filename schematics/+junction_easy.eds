@@ -14,35 +14,35 @@
 
 	<component id="Inlet_1" library="LPRES" type="Inlet" layer="1" elPosition="1"  hotPort="f" >
 	
-		<symbol cx="208.029" cy="74" sx="64.9412" sy="85" dx="80" dy="160" onLabel="true" />
+		<symbol cx="208.029" cy="74" sx="64.9412" sy="85" dx="128" dy="160" onLabel="true" />
 	
-		<label cx="23" cy="12" dx="263.029" dy="274" />
+		<label cx="23" cy="12" dx="311.029" dy="274" />
 	
 		<instanceData>
 			<datum id="fluid" value="He" pos="D" />
-			<datum id="W" value="100" pos="D" />
+			<datum id="W" value="10" pos="D" />
 		</instanceData>
 	
 	</component>
 
 	<component id="Inlet_2" library="LPRES" type="Inlet" layer="1" elPosition="2"  hotPort="f" >
 	
-		<symbol cx="208.029" cy="74" sx="64.9412" sy="85" dx="616" dy="168" onLabel="true" />
+		<symbol cx="208.029" cy="74" sx="64.9412" sy="85" dx="520" dy="168" onLabel="true" />
 	
-		<label cx="23" cy="12" dx="799.029" dy="282" />
+		<label cx="23" cy="12" dx="703.029" dy="282" />
 	
 		<instanceData>
 			<datum id="fluid" value="He" pos="D" />
-			<datum id="Type" value="Unknown_W" pos="P" />
+			<datum id="W" value="10" pos="D" />
 		</instanceData>
 	
 	</component>
 
 	<component id="New_Junction_1" library="LPRES" type="New_Junction" layer="1" elPosition="3" >
 	
-		<symbol cx="256" cy="150" sx="113" sy="61" dx="284" dy="216" onLabel="true" />
+		<symbol cx="256" cy="150" sx="113" sy="61" dx="276" dy="208" onLabel="true" />
 	
-		<label cx="51" cy="12" dx="481.5" dy="394" />
+		<label cx="51" cy="12" dx="473.5" dy="386" />
 	
 		<instanceData>
 			<datum id="Type" value="Compressible" pos="P" />
@@ -50,9 +50,9 @@
 	
 	</component>
 
-	<connector id="Connector_1" sShape="Inlet_1" sPort="f" eShape="New_Junction_1" ePort="f_in1" points="288,344"  intermediate1="1" elPosition="0"  />
+	<connector id="Connector_1" sShape="Inlet_1" sPort="f" eShape="New_Junction_1" ePort="f_in1" points="336,336"  intermediate1="1" elPosition="0"  />
 
-	<connector id="Connector_2" sShape="Inlet_2" sPort="f" eShape="New_Junction_1" ePort="f_in2" points="824,344"  intermediate1="1" elPosition="1"  />
+	<connector id="Connector_2" sShape="Inlet_2" sPort="f" eShape="New_Junction_1" ePort="f_in2" points="728,336"  intermediate1="1" elPosition="1"  />
 
 	<bodyEL>
 	<![CDATA[-- EL code of the schematic.

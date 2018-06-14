@@ -10,13 +10,20 @@
 <generateObfuscatedCpp value="FALSE"/>
 <generateParInfoHTML value="TRUE"/>
 <generateMaxSignificantDigits value="FALSE"/>
+<noDatas>
+  <variable name="New_Junction_1.M_A1"/>
+</noDatas>
 <boundaries>
   <variable name="Inlet_1.Tt"/>
   <variable name="Inlet_1.pt"/>
   <variable name="Inlet_2.Tt"/>
   <variable name="Inlet_2.pt"/>
-  <variable name="New_Junction_1.A_out"/>
-  <variable name="New_Junction_1.f_out.Tt"/>
-  <variable name="New_Junction_1.f_out.W"/>
+  <variable name="New_Junction_1.A_in1"/>
+  <variable name="New_Junction_1.A_in2"/>
 </boundaries>
+<algebraics>
+  <variable name="New_Junction_1.M_A1"/>
+  <variable name="New_Junction_1.M_in2"/>
+  <variable name="New_Junction_1.M_out"/>
+</algebraics>
 </partitionInfo>

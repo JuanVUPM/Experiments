@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<experiment version="1.4.0">
+	<experimentViews>
+		<tab name="Tab_1">
+			<tableWindow title="" x="0" y="0" dx="350" dy="250" state="maximized">
+				<table id="Table_1" colums="true">
+					<var name="#Calculation id"/>
+					<var name="#Status"/>
+					<var name="#ESI"/>
+					<var name="#Case"/>
+					<var name="#Point"/>
+					<var name="New_Junction_1.M_A1"/>
+					<var name="New_Junction_1.M_in1"/>
+					<var name="New_Junction_1.M_in2"/>
+					<var name="New_Junction_1.V_out"/>
+				</table>
+			</tableWindow>
+			<tableWindow title="" x="0" y="0" dx="350" dy="250" state="maximized">
+				<table id="Table_2" colums="true">
+					<var name="#Calculation id"/>
+					<var name="#Status"/>
+					<var name="#ESI"/>
+					<var name="#Case"/>
+					<var name="#Point"/>
+					<var name="Valve_1.A"/>
+				</table>
+			</tableWindow>
+			<plotWindow title="Plot_3" x="700" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_3" graphType="plot_x_y">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="Valve_1.A">
+							<titleAxe value="Valve_1.A"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="Turbine_1.f_in.W" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+			<plotWindow title="Plot_1" x="0" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_1" graphType="plot_x_y">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="Valve_1.A">
+							<titleAxe value="Valve_1.A"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="Turbine_1.Power" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+			<plotWindow title="Plot_2" x="350" y="0" dx="350" dy="250" state="maximized">
+				<plot id="Plot_2" graphType="plot_x_y">
+						<title value="">
+							<font/>
+						</title>
+						<axeX variableName="Valve_1.A">
+							<titleAxe value="Valve_1.A"/>
+							<scale scaleType="auto"/>
+						</axeX>
+						<axeY>
+							<titleAxe value=""/>
+							<scale scaleType="auto"/>
+						</axeY>
+						<layout>
+							<font/>
+							<majorGrid/>
+							<minorGrid/>
+						</layout>
+						<legend>
+							<font/>
+						</legend>
+						<chartStyles>
+							<var name="New_Junction_1.M_in1" nick=""/>
+							<var name="New_Junction_1.M_in2" nick=""/>
+							<var name="New_Junction_1.M_out" nick=""/>
+							<var name="Valve_1.M_g" nick=""/>
+							<var name="Turbine_1.M_2" nick=""/>
+						</chartStyles>
+					
+					</plot>
+			</plotWindow>
+			<tableWindow title="Table_2" x="0" y="0" dx="350" dy="250" state="maximized">
+				<table id="Table_2" colums="true">
+					<var name="#Calculation id"/>
+					<var name="#Status"/>
+					<var name="#ESI"/>
+					<var name="#Case"/>
+					<var name="#Point"/>
+					<var name="Turbine_1.m.Power"/>
+					<var name="Valve_1.A"/>
+					<var name="Delta_p"/>
+					<var name="New_Junction_1.f_in1.pt"/>
+					<var name="New_Junction_1.f_in2.pt"/>
+					<var name="New_Junction_1.f_out.pt"/>
+					<var name="Turbine_1.tau"/>
+					<var name="Turbine_1.U"/>
+				</table>
+			</tableWindow>
+		</tab>
+	</experimentViews>
+	<watch width="268" height="192" visible="true" pos="right" >
+		<currentTab name="view"/>
+		<variables>
+			<tab name="initial"> 
+			</tab> 
+			<tab name="inputs"> 
+			</tab> 
+			<tab name="view"> 
+			</tab> 
+		</variables>
+		<layout>
+			<tab name="initial"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+				<column name="type" width="100"/> 
+			</tab> 
+			<tab name="inputs"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+			</tab> 
+			<tab name="view"> 
+				<column name="name" width="100"/> 
+				<column name="value" width="100"/> 
+				<column name="units" width="100"/> 
+				<column name="category" width="100"/> 
+			</tab> 
+		</layout>
+	</watch>
+	<outputWindow height="192" width="1440" visible="true" pos="bottom" />
+	<alarms globalEnabled="TRUE">
+	</alarms>
+
+	<mainWindow  mode="maximized" currentTab="Tab_1" />
+</experiment>

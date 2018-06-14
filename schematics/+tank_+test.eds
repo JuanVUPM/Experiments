@@ -19,21 +19,19 @@
 		<label cx="38" cy="12" dx="566.5" dy="463.75" />
 	
 		<instanceData>
-			<datum id="Type1" value="No_Area" pos="P" />
-			<datum id="Type2" value="Known_Qp" pos="P" />
+			<datum id="p_0" value="4990000" pos="D" />
 		</instanceData>
 	
 	</component>
 
 	<component id="Deposit_1" library="LPRES" type="Deposit" layer="1" elPosition="1"  hotPort="g" >
 	
-		<symbol cx="191.032" cy="139.089" sx="82.0234" sy="49" dx="140.456" dy="252.455" onLabel="true" />
+		<symbol cx="190.691" cy="139.089" sx="80.055" sy="49" dx="140.456" dy="252.455" onLabel="true" />
 	
 		<label cx="33" cy="12" dx="293.488" dy="413.544" />
 	
 		<instanceData>
 			<datum id="T_0" value="298.15" pos="D" />
-			<datum id="Type" value="Known_Qp" pos="P" />
 		</instanceData>
 	
 	</component>
@@ -46,8 +44,6 @@
 -- You can edit the parameters clicking over them.
 
 COMPONENT %NAME% 
-
-
 END COMPONENT
 ]]>
 	</bodyEL>

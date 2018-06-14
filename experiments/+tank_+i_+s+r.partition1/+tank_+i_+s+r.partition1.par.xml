@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="CASES" component="Tank_I_SR" partition="partition1">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<highIndexVars>
+  <variable name="Deposit_1.m"/>
+</highIndexVars>
+<boundaries>
+  <variable name="Pro_Tank_1.l.W"/>
+</boundaries>
+<dynamics>
+  <variable name="Deposit_1.flux"/>
+  <variable name="Pro_Tank_1.Q"/>
+  <variable name="Pro_Tank_1.T_g"/>
+  <variable name="Pro_Tank_1.p_g"/>
+  <variable name="Pro_Tank_1.Vol_g"/>
+</dynamics>
+<algebraics>
+  <variable name="Pro_Tank_1.m"/>
+</algebraics>
+</partitionInfo>

@@ -1,0 +1,47 @@
+ /*-----------------------------------------------------------------------------------------
+ LIBRARY: CASES
+ COMPONENT: Subsystem_new_i
+ PARTITION: OffDesign_good
+ EXPERIMENT: exp1
+ TEMPLATE: STEADY
+ CREATION DATE: 13/06/2018
+-----------------------------------------------------------------------------------------*/
+
+EXPERIMENT exp1 ON Subsystem_new_i.OffDesign_good
+   DECLS
+   OBJECTS
+   INIT
+      -- initial values for algebraics
+      New_Junction_1.f_in1.W = 16.7085738
+      Valve_1.M_g = 0.49999999
+
+   BOUNDS
+      -- Set equations for boundaries: boundVar = f(TIME;...)
+      Inlet_1.Tt = 300
+      Inlet_1.pt = 1000000
+      Turbine_1.m.N = 3000
+      Valve_1.A = 0.04
+ 		New_Junction_1.A_out = 1
+   BODY
+      -- report results in file reportAll.rpt
+      REPORT_LIST("reportAll","*",TRUE)
+		New_Junction_1.PR = 1.1
+      DEBUG_LEVEL= 1      -- Range 0..4
+      -- Settings for different actions. Valid actions are: SEV_DISABLE, SEV_NONE, SEV_WARNING, SEV_ERROR, SEV_KILLPOINT and SEV_FATALL
+      --eSetErrorAction(ERR_BAD_OPER,SEV_KILLPOINT) -- Detect bad numerical operations (eg division by zero), default is SEV_NONE, recommended is SEV_KILLPOINT
+      --eSetErrorAction(ERR_NAN_INF, SEV_KILLPOINT) -- Detect NaN or Inf values, default is SEV_NONE, recommended is SEV_KILLPOINT
+      TOLTYPE= RELTOL -- convergence criteria
+      TOLERANCE = 1e-06 -- steady solver relative tolerance 
+		
+		
+		--FOR(New_Junction_1.PR = 0.9; New_Junction_1.PR<=1.1; New_Junction_1.PR=New_Junction_1.PR+0.1)
+		--NEW_BRANCH("Pressure Ratio = $New_Junction_1.PR")
+		New_Junction_1.PR = 0.956138989974211
+      FOR(Valve_1.A = 0.033; Valve_1.A <= 0.07; Valve_1.A = Valve_1.A + 0.0005)
+		
+      -- Call the steady state function
+      STEADY()
+		END FOR
+		--END FOR 
+
+END EXPERIMENT

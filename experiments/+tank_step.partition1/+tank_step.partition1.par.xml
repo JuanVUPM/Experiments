@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<partitionInfo version="1.0" library="CASES" component="Tank_step" partition="partition1">
+<noDerivatives value="FALSE"/>
+<inhibitReductionConstantCoefEqts value="FALSE"/>
+<generatePartitionClass value="FALSE"/>
+<removeNotUsedVars value="FALSE"/>
+<showPropertyPanel value="FALSE"/>
+<generateProtectedMathFunctions value="TRUE"/>
+<generatePerformanceMeters value="FALSE"/>
+<generateObfuscatedCpp value="FALSE"/>
+<generateParInfoHTML value="TRUE"/>
+<generateMaxSignificantDigits value="FALSE"/>
+<boundaries>
+  <variable name="Ambient_1.l.W"/>
+  <variable name="Inlet_1.Tt"/>
+  <variable name="Inlet_1.pt"/>
+  <variable name="LPRES.Altitude"/>
+</boundaries>
+<dynamics>
+  <variable name="Pro_Tank_1.Q"/>
+  <variable name="Pro_Tank_1.T_g"/>
+  <variable name="Pro_Tank_1.p_g"/>
+  <variable name="Pro_Tank_1.Vol_g"/>
+</dynamics>
+<algebraics>
+  <variable name="Pro_Tank_1.M_g"/>
+  <variable name="Pro_Tank_1.m"/>
+</algebraics>
+</partitionInfo>

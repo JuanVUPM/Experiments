@@ -36,20 +36,6 @@
 	
 	</component>
 
-	<component id="Inlet_1" library="LPRES" type="Inlet" layer="1"  hotPort="f" >
-	
-		<symbol cx="208.029" cy="74" sx="64.9412" sy="85" dx="-80" dy="96" onLabel="true" />
-	
-		<label cx="23" cy="12" dx="103.029" dy="210" />
-	
-		<instanceData>
-			<datum id="pt" value="7000000" pos="D" />
-			<datum id="fluid" value="He" pos="D" />
-			<datum id="Type" value="Unknown_W" pos="P" />
-		</instanceData>
-	
-	</component>
-
 	<component id="ThrustMonitor_1" library="LPRES" type="ThrustMonitor" layer="1"  hotPort="i" >
 	
 		<symbol cx="312" cy="152" sx="121" sy="73.0001" dx="224" dy="532" onLabel="true" />
@@ -70,8 +56,6 @@
 		</instanceData>
 	
 	</component>
-
-	<connector id="Connector_1" sShape="Inlet_1" sPort="f" eShape="Regulator_1" ePort="f_in"  />
 
 	<connector id="Connector_5" sShape="Regulator_1" sPort="f_out" eShape="Tank_1" ePort="g"  />
 
@@ -118,6 +102,21 @@
 	<connector id="Connector_8" sShape="MCombCha_1" sPort="i" eShape="ControlPanel_1" ePort="i_Comb" points="788,480"  intermediate2="1"  />
 
 	<connector id="Connector_9" sShape="ThrustMonitor_1" sPort="i" eShape="ControlPanel_1" ePort="i_Thrust" points="788,696"  intermediate2="1"  />
+
+	<component id="Inlet_1" library="LPRES" type="Inlet" layer="1"  hotPort="f" >
+	
+		<symbol cx="208.029" cy="74" sx="64.9412" sy="85" dx="-16" dy="56" onLabel="true" />
+	
+		<label cx="23" cy="12" dx="167.029" dy="170" />
+	
+		<instanceData>
+			<datum id="fluid" value="He" pos="D" />
+			<datum id="Type" value="Unknown_W" pos="P" />
+		</instanceData>
+	
+	</component>
+
+	<connector id="Connector_1" sShape="Inlet_1" sPort="f" eShape="Regulator_1" ePort="f_in" points="192,208"  intermediate1="1"  />
 
 	<bodyEL>
 	<![CDATA[-- EL code of the schematic.
